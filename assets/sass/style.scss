@@ -1,1 +1,94 @@
 @import "variables";
+
+*{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    a{
+        text-decoration: none;
+    }
+}
+
+.container{
+    height: 100%;
+}
+.row{
+    height: 100%;
+}
+// Photix section
+//##########################################
+.photix{
+    height: 75vh;
+    background-color: #000;
+    font-family: font;
+        .item-left{
+            width: 100%;
+            height: 100%;
+        }
+        .right-item{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .right-text{
+                width: 85%;
+             h1{
+             color: #fff;
+             font-size: 3rem;
+            }
+            p{
+              color: #7A7A7A;
+              font-size: 1.6rem;
+              line-height: 1.6;
+            }
+        }
+        }
+}
+
+
+// Slider section
+//##########################################
+
+
+// Footer section
+//##########################################
+
+.ftr{
+    background-color: black;
+    height: 10vh;
+    font-family:font;
+            .copy{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                p{
+                    margin: 0;
+                    font-size: 1.3rem;
+                    color: #fff;
+                }
+            }
+            .icons{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                i{
+                    color: #fff;
+                    font-size: 1.4rem;
+                    margin-left: 1.3rem;
+                    cursor: pointer;
+                    transition: all .4s ease;
+                    &:hover{
+                        color: red;
+                    }
+                }
+            }
+        }
