@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixin";
 
 *{
     font-size: 10px;
@@ -9,14 +10,137 @@
     a{
         text-decoration: none;
     }
+    font-family: font;
 }
 
-.container{
+
+.container,.container-fluid{
     height: 100%;
 }
 .row{
     height: 100%;
 }
+// Hero section
+.hero{
+    height: 100vh;
+    .carousel{
+        height: 100%;
+        .carousel-item{
+            position: relative;
+          .txt{
+            position: absolute;
+            left: 7%;
+            top: 28%;
+            width: 35%;
+            h1{
+                color: #fff;
+                font-size: 4rem;
+                font-weight: 600;
+            }
+            p{
+                color: #fff;
+                line-height: 2.1;
+                font-size: 1.3rem;
+                text-align: left;
+            }
+            .line{
+                background-color: rgb(226, 14, 15);
+                width: 111px;
+                height: 3px;
+                margin: 1.3rem 0;
+             }
+        }
+        .nav{
+            padding: 0 5rem;
+            width: 100%;
+            height: 10vh;
+            position: absolute;
+            top: 4rem;
+            left: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .logo{
+           width: 30%;
+            }
+            .nav-link{
+                width: 50%;
+                padding: 0 ;
+                ul{
+                    display: flex;
+                   flex-direction: row;
+                   justify-content: space-between;
+                   align-items: center;
+                   li{
+                       
+                       a{
+                           font-size: 1.4rem;
+                           color: #fff;
+                            text-transform: uppercase;
+                       }
+                   }
+                }
+            }
+        }
+    }
+        
+    }
+}
+
+
+
+
+// Zoom Items
+.zoom-items{
+    height: auto;
+    background-color: #000;
+    .img-hover-zoom{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+         position: relative;
+        @include center;
+         &:hover img{
+            transform: scale(1.1);
+            filter: brightness(100%);
+        }
+        img{
+        width: 100%;
+        height: 100%;
+        filter: brightness(50%);
+        transition: all .5s ease;
+      
+        }
+        .text{
+            position:absolute;
+            width: 80%;
+            p{
+            color: #fff;
+             font-size: 2rem;
+             text-align: center;
+            }
+            h5{
+                text-align: center;
+                opacity: 0;
+                color: #bbb;
+                font-size: 1.8rem;
+                line-height: 1.8;
+                font-weight: 300;
+                transition: all .6s ease;
+                transform: scale(0);
+                
+            }
+        }
+        
+       &:hover h5{
+           opacity: 1;
+           transform: scale(.8);
+       }
+    }
+}
+
+
 // Photix section
 //##########################################
 .photix{
@@ -48,9 +172,63 @@
         }
 }
 
+// Boxes section
+.boxes{
+    background-image: url("../img/bg-1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    height: 38vh;
+    .box{
+        width: 100%;
+        height:100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        h1{
+            font-size: 5rem;
+        }
+        p{
+            font-size: 1.7rem;
+        }
+    }
+    
+}
+
+
 
 // Slider section
 //##########################################
+.slider{
+    height: auto;
+    background-color: #000;
+    .image{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        @include center;
+        cursor: pointer;
+        &:hover img{
+          transform: scale(1.1);
+          filter: brightness(70%);
+        }
+        p{
+            position: absolute;
+            color: #fff;
+            font-size: 2rem;
+        }
+        img{
+            transition: all .6s ease;
+            filter: brightness(50%);
+        }
+    }
+}
+
+
 
 
 // Footer section
@@ -92,3 +270,8 @@
                 }
             }
         }
+
+
+ .carousel-control-next, .carousel-control-prev{
+     width: 8% !important;
+ }
