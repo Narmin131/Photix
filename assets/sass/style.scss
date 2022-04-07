@@ -42,7 +42,7 @@
             p{
                 color: #fff;
                 line-height: 2.1;
-                font-size: 1.3rem;
+                font-size: 1.5rem;
                 text-align: left;
             }
             .line{
@@ -69,7 +69,7 @@
             .nav-link{
                 width: 50%;
                 padding: 0 ;
-                ul{
+                .first-ul{
                     display: flex;
                    flex-direction: row;
                    justify-content: space-between;
@@ -80,6 +80,12 @@
                            font-size: 1.4rem;
                            color: #fff;
                             text-transform: uppercase;
+                            transition: all .3s ease;
+                            letter-spacing: 1px;
+                            &:hover{
+                                color: red;
+                            }
+                            
                        }
                    }
                 }
@@ -90,6 +96,43 @@
     }
 }
 
+// Dropdown code
+.first-li{
+    position: relative;
+    &:hover .second-ul{
+        opacity: 1;
+        visibility: visible;
+    }
+    .second-ul{
+        position: absolute;
+        padding: 0;
+        width: 170px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease;
+        li{
+           background-color: #262626;
+           margin-bottom:.7px;
+           padding: 10px 10px 10px 3px;
+           cursor: pointer;
+            a{
+               color: #fff;
+               transition: all .3s ease;
+               font-size: 1.3rem !important;
+               text-transform: none !important;
+               letter-spacing: 0 !important;
+               
+            } 
+            &:hover a{
+               color: red !important;
+           }
+        }
+    }
+}
+
+.red{
+    color: red !important;
+}
 
 
 
@@ -277,3 +320,4 @@
  .carousel-control-next, .carousel-control-prev{
      width: 8% !important;
  }
+
